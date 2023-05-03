@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('run the docker container') {
             steps {
-                sh ''' docker run --name koti -d -p 82:80 goutham '''
+                sh ''' docker run --name second -d -p 83:80 goutham '''
             }
         }
     }
