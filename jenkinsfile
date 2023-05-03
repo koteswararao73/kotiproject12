@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage ('cloning into github') {
+            steps {
+                git branch: 'main', url: 'https://github.com/koteswararao73/kotiproject12.git'
+            }
+        }
+        stage ('converted into docker image') {
+            steps {
+                sh ''' docker build -t goutham .'''
+            }
+        }
+        stage ('run the docker container') {
+            steps {
+                sh ''' docker run --name koti -d -p 82:80 goutham '''
+            }
+        }
+    }
+    
+}
