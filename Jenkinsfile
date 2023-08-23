@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('run image') {
             steps {
-                sh ''' docker build -t koti . '''
+                sh ''' docker build -t koti12 . '''
             }
         }
         stage ('push image') {
@@ -16,8 +16,8 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'docker-hub') {
                      
-                        sh ''' docker tag koti koteswarararaosairi/rajubro:n1
-                               docker push koteswarararaosairi/rajubro:n1 
+                        sh ''' docker tag koti koteswarararaosairi/rajub:n12
+                               docker push koteswarararaosairi/rajub:n12 
                                '''
                     }
                 }
@@ -25,7 +25,7 @@ pipeline {
         }
         stage ('run container') {
             steps {
-                 sh ''' docker run --name  coon2 -d -p 888:80 koteswarararaosairi/rajubro:n1
+                 sh ''' docker run --name  coon23 -d -p 8888:80 koteswarararaosairi/rajub:n12
                  '''
             }
         }
