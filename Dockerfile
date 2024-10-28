@@ -2,3 +2,12 @@ FROM nginx
 LABEL maintainer address "koteswarao"
 COPY ./index.html /usr/share/nginx/html
 EXPOSE 80
+aas
+xasx
+sax
+asx
+as
+x
+sax
+s
+x
